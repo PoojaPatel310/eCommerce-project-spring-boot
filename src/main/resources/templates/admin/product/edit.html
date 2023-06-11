@@ -1,0 +1,138 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www/thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate ="admin/template">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Edit</title>
+</head>
+
+<body class="hold-transition sidebar-mini">
+
+
+<div layout:fragment = "content1">
+
+    <div class ="container my-3">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Product Edit</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/product/list">Home</a></li>
+                            <li class="breadcrumb-item active">Products</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Product Edit</h3>
+                            </div>
+                            <div class="container my-3">
+                                <form th:action="@{/product/update(id=${product.id})}" th:object="${product}" method="post" enctype="multipart/form-data">
+
+
+
+                                    <div class="form-group">
+                                        <label for="category_id">CATEGORY</label>
+                                        <select th:field="${product.category}" name="category_id" id="category_id"  class="form-select">
+                                            <option th:each="category:${categoryList}"
+                                                    th:text="${category.name}"
+                                                    th:value="${category.id}">
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="brand_id">BRAND</label>
+                                        <select th:field="${product.brand}" name="brand_id" id="brand_id"  class="form-select">
+                                            <option th:each="brand:${brandList}"
+                                                    th:text="${brand.name}"
+                                                    th:value="${brand.id}">
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="name">NAME</label>
+                                        <input type="text" th:field="*{name}" class="form-control"  id="name" placeholder="Enter Product Name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="detail">DETAIL</label>
+                                        <textarea th:field="*{detail}" class="form-control"  id="detail" placeholder="Enter Product Detail"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="image">IMAGE </label>
+                                        <input type="file" class="form-control" id="image" name="photo1" accept="*" />
+                                        <img th:src="${product.PhotosImagePath}" width="80px" height="80px" />
+                                    </div>
+
+                                    <input type="hidden" th:field="*{image}" class="form-control"  name="image" >
+
+                                    <div class="form-group">
+                                        <label for="mrp">MRP</label>
+                                        <input type="text" th:field="*{mrp}" class="form-control"  id="mrp">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="rate">RATE</label>
+                                        <input type="text" th:field="*{rate}" class="form-control"  id="rate" >
+                                    </div>
+
+
+
+                                    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                </form>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+
+
+<aside class="control-sidebar control-sidebar-dark">
+</aside>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

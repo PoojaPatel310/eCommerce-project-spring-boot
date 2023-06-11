@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="zxx"
+      xmlns:th="http://www/thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="user/template">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Fashi Template">
+  <meta name="keywords" content="Fashi, unica, creative, html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>E-Commerce</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+<div layout:fragment="content1">
+
+
+<!-- Breadcrumb Section Begin -->
+<div class="breacrumb-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb-text">
+          <a href="/index"><i class="fa fa-home"></i> Home</a>
+          <span>FAQs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Breadcrumb Section Begin -->
+
+<!-- Faq Section Begin -->
+<div class="faq-section spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="faq-accordin">
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-heading active">
+                <a class="active" data-toggle="collapse" data-target="#collapseOne">
+                  How do I choose the right laptop?
+                </a>
+              </div>
+              <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p>Consider your needs and preferences, such as budget, specifications, brand, and desired features.
+                    Read product descriptions, customer reviews, and expert opinions to make an informed decision.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-heading">
+                <a data-toggle="collapse" data-target="#collapseTwo">
+                  What should I do if I receive a damaged or defective product?
+                </a>
+              </div>
+              <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p>Contact customer support immediately and provide them with details about the issue.
+                    Follow the instructions provided by the customer support team regarding returns, refunds, or replacements.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-heading">
+                <a data-toggle="collapse" data-target="#collapseThree">
+                  Are online purchases safe?
+                </a>
+              </div>
+              <div id="collapseThree" class="collapse" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p>Online shopping can be safe if you follow some precautions. Shop from reputable websites with secure payment options.
+                    Look for customer reviews and ratings to gauge the credibility of the seller.</p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Faq Section End -->
+
+
+
+</body>
+
+</html>

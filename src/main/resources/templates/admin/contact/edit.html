@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www/thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate ="admin/template">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Edit</title>
+</head>
+
+<body class="hold-transition sidebar-mini">
+
+
+<div layout:fragment = "content1">
+
+    <div class ="container my-3">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Contact Edit</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/contact/list">Home</a></li>
+                            <li class="breadcrumb-item active">Contacts</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Contact Edit</h3>
+                            </div>
+                            <div class="container my-3">
+                                <form id="quickForm" th:action="@{/contact/update(id=${contactUs.id})}" th:object="${contactUs}" method="post">
+
+
+                                    <div class="form-group">
+                                        <label for="fname">FIRST NAME</label>
+                                        <input type="text" th:field="*{fname}" class="form-control"  id="fname" placeholder="Enter First Name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="lname">LAST NAME</label>
+                                        <input type="text" th:field="*{lname}" class="form-control"  id="lname" placeholder="Enter Last Name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="phone">MOBILE</label>
+                                        <input type="text" th:field="*{phone}" class="form-control"  id="phone" placeholder="Enter Your Contact Number">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email">EMAIL</label>
+                                        <input type="email" th:field="*{email}" class="form-control"  id="email" placeholder="Enter E-mail">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="message">MESSAGE</label>
+                                        <textarea th:field="*{message}" class="form-control"  id="message"></textarea>
+                                    </div>
+
+
+
+                                    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                </form>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+
+
+<aside class="control-sidebar control-sidebar-dark">
+</aside>
+<!--
+<script layout:fragment="script1">
+$(function () {
+  $.validator.setDefaults({
+    submitHandler: function () {
+     $('#quickForm').submit
+    }
+  });
+  $('#quickForm').validate({
+    rules: {
+      fname: {
+        required: true,
+      },
+       lname: {
+        required: true,
+      },
+       city: {
+        required: true,
+      },
+       mobile: {
+        required: true,
+      },
+       email: {
+        required: true,
+        email: true,
+      },
+      password:  {
+        required: true,
+         minlength: 5,
+      },
+       role:  {
+        required: true,
+      },
+    },
+    messages: {
+      fname: {
+        required: "Please provide first name",
+      },
+       lname: {
+        required: "Please provide last name",
+      },
+       city: {
+        required: "Please provide your city",
+      },
+       mobile: {
+        required: "Please provide your contact number",
+      },
+      email:{
+        required: "Please enter a email address",
+        email: "Please enter a valid email address"
+      },
+       password: {
+        required: "Please provide a password",
+        minlength: "Your password must be at least 5 characters long"
+      },
+       role: {
+        required: "Please provide role",
+      },
+    },
+    errorElement: 'span',
+    errorPlacement: function (error, element) {
+      error.addClass('invalid-feedback');
+      element.closest('.form-group').append(error);
+    },
+    highlight: function (element, errorClass, validClass) {
+      $(element).addClass('is-invalid');
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      $(element).removeClass('is-invalid');
+    }
+  });
+});
+</script>
+-->
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,104 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www/thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate ="admin/template">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Service Edit</title>
+</head>
+
+<body class="hold-transition sidebar-mini">
+
+
+<div layout:fragment = "content1">
+
+    <div class ="container my-3">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Service Edit</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/service/list">Home</a></li>
+                            <li class="breadcrumb-item active">Categories</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Service Edit</h3>
+                            </div>
+                            <div class="container my-3">
+                                <form th:action="@{/service/update(id=${service.id})}" th:object="${service}" method="post" enctype="multipart/form-data">
+
+
+
+                                    <div class="form-group">
+                                        <label for="title">NAME</label>
+                                        <input type="text" th:field="*{title}" class="form-control"  id="title" placeholder="Enter Service Title">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="detail">NAME</label>
+                                        <input type="text" th:field="*{detail}" class="form-control"  id="detail" placeholder="Enter Service Detail">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="icon">ICON </label>
+                                        <input type="file" class="form-control" id="icon" name="icon1" accept="*" />
+                                 <img th:src="${service.PhotosImagePath}" width="80px" height="80px" />
+                                    </div>
+
+                                    <input type="hidden" th:field="*{icon}" class="form-control"  name="icon" >
+
+
+
+
+
+
+
+
+                                    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                </form>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+
+
+<aside class="control-sidebar control-sidebar-dark">
+</aside>
+
+
+</body>
+</html>
+
+

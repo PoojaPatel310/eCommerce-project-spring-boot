@@ -1,0 +1,127 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www/thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate ="admin/template">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cart Edit</title>
+</head>
+
+<body class="hold-transition sidebar-mini">
+
+
+<div layout:fragment = "content1">
+
+    <div class ="container my-3">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Cart Edit</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/cart/list">Home</a></li>
+                            <li class="breadcrumb-item active">Carts</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Cart Edit</h3>
+                            </div>
+                            <div class="container my-3">
+                                <form th:action="@{/cart/update(id=${cart.id})}" th:object="${cart}" method="post">
+
+
+
+                                    <div class="form-group">
+                                        <label for="user_id">USER</label>
+                                        <select th:field="${cart.user}" name="user_id" id="user_id"  class="form-select">
+                                            <option th:each="user:${userList}"
+                                                    th:text="${user.fname}"
+                                                    th:value="${user.id}">
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="product_id">PRODUCT</label>
+                                        <select th:field="${cart.product}" name="product_id" id="product_id"  class="form-select">
+                                            <option th:each="product:${productList}"
+                                                    th:text="${product.name}"
+                                                    th:value="${product.id}">
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="qty">QUANTITY</label>
+                                        <input type="text" th:field="*{qty}" class="form-control"  id="qty" >
+                                    </div>
+
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="rate">RATE</label>-->
+<!--                                        <input type="text" th:field="*{rate}" class="form-control"  id="rate" >-->
+<!--                                    </div>-->
+
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="amount">AMOUNT</label>-->
+<!--                                        <input type="text" th:field="*{amount}" class="form-control"  id="amount" >-->
+<!--                                    </div>-->
+
+
+                                    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                </form>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+
+
+<aside class="control-sidebar control-sidebar-dark">
+</aside>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

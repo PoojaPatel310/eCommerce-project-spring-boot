@@ -1,0 +1,147 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www/thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate ="admin/template">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Company Detail Edit</title>
+</head>
+
+<body class="hold-transition sidebar-mini">
+
+<div layout:fragment = "content1">
+
+    <div class ="container my-3">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Company Detail Edit</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/company-detail/list">Home</a></li>
+                            <li class="breadcrumb-item active">Company Detail</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Company Detail Edit</h3>
+                            </div>
+                            <div class="container my-3">
+                                <form th:action="@{/company-detail/update(id=${companyDetail.id})}" th:object="${companyDetail}" method="post" enctype="multipart/form-data">
+
+
+
+
+
+                                    <div class="form-group">
+                                        <label for="name">NAME</label>
+                                        <input type="text" th:field="*{name}" class="form-control"  id="name" placeholder="Enter Company Detail">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="headerLogo">HEADER LOGO </label>
+                                        <input type="file" class="form-control" id="headerLogo" name="photo1" accept="*" />
+                                        <img th:src="${companyDetail.HeaderLogoPath}" width="80px" height="80px" />
+                                    </div>
+                                    <input type="hidden" th:field="*{headerLogo}" class="form-control"  name="headerLogo" >
+
+
+                                    <div class="form-group">
+                                        <label for="footerLogo">FOOTER LOGO </label>
+                                        <input type="file" class="form-control" id="footerLogo" name="photo2" accept="*" />
+                                        <img th:src="${companyDetail.FooterLogoPath}" width="80px" height="80px" />
+                                    </div>
+                                    <input type="hidden" th:field="*{footerLogo}" class="form-control"  name="footerLogo" >
+
+                                    <div class="form-group">
+                                        <label for="email">EMAIL</label>
+                                        <input type="email" th:field="*{email}" class="form-control"  id="email" placeholder="Enter Email">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="mobile">MOBILE</label>
+                                        <input type="text" th:field="*{mobile}" class="form-control"  id="mobile" placeholder="Enter Company Contact Number">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="facebook">FACEBOOK</label>
+                                        <input type="text" th:field="*{facebook}" class="form-control"  id="facebook" placeholder="Enter Company Facebook link">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="twitter">TWITTER</label>
+                                        <input type="text" th:field="*{twitter}" class="form-control"  id="twitter" placeholder="Enter Company Twitter link">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="linkedin">LINKEDIN</label>
+                                        <input type="text" th:field="*{linkedin}" class="form-control"  id="linkedin" placeholder="Enter Company Linkedin link">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="pinterest">PINTEREST</label>
+                                        <input type="text" th:field="*{pinterest}" class="form-control"  id="pinterest" placeholder="Enter Company Pinterest link">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="address1">ADDRESS LINE 1</label>
+                                        <input type="text" th:field="*{address1}" class="form-control"  id="address1" placeholder="Enter Company Address Line 1">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="address2">ADDRESS LINE 2</label>
+                                        <input type="text" th:field="*{address2}" class="form-control"  id="address2" placeholder="Enter Company Address Line 2">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="copyWrite">COPY-WRITE</label>
+                                        <input type="text" th:field="*{copyWrite}" class="form-control"  id="copyWrite" placeholder="Enter Company copyWrite">
+                                    </div>
+
+
+
+                                    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                </form>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+
+
+<aside class="control-sidebar control-sidebar-dark">
+</aside>
+
+
+</body>
+</html>
+
+
